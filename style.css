@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+}
+
+h3 {
+    color: rgb(233, 125, 1);
+    text-align: center;
+   }
+
+.intro {
+   text-align: center;
+   background-color: var(--intro-color);
+   color: white;
+   margin: 16px;
+   padding: -16px;
+
+   }
+
+   #profile-img{
+    
+    height: 300px;
+    width: 300px;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.social-links img{
+    height: 20px;
+    width: 20px;
+    background-color: rgb(33, 59, 177);
+    border-radius: 6px;
+    margin-left: 8px;
+}
+:root {
+    scroll-behavior: smooth;
+    transition-delay:2s;
+    --secondary-color:hsl(225, 85%, 57%);
+    --background-color: hsl(240deg, 80%, 100%);
+    --text-color: hsl(240deg, 95%, 0%);
+    --intro-color: hsl(0deg, 0%, 85%);
+    --shadow-color: hsl(255 10% 83%);
+    --shadow-color-dark: hsl(255 10% 63%);   
+    
+
+    --font-size-small: 0.5rem;
+    --font-size-regular: 1rem;
+    --font-size-large: 1.5rem;
+    --font-size-xl: 2rem;
+
+    --spacing-regular: 16px;
+    --spacing-small:calc(var(--spacing-regular) / 2);
+
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}   
+
+.header {
+    padding:16px;
+    position:sticky;
+    top: 0;
+    background: var(--background-color);
+    z-index: 1;
+    border: 1px solid ;
+    
+}
+
+nav a{
+    text-decoration: none;
+    color: inherit;
+    font-size: var(--font-size-regular);
+}
+
+header nav > a{
+    margin-right: 16px;
+}
+header nav > a:last-child{
+    margin-right: revert;
+}
+nav a:hover,
+nav a:visited:hover{
+    
+    color:var(--secondary-color);
+}
+nav>a:visited {
+    color: inherit;
+}
+
+p{
+    margin-left: 4px;
+}
+
+
+.dynamic-text-Color{
+    color:royalblue ;
+}
+
+form#contact {
+    max-width: 400px;
+    margin: auto;
+    padding: 16px;
+    border: 1px solid;
+    border-radius: 16px;
+    
+}
+
+#contact label {
+    display: block;
+    font-weight: 600;
+    font-size: var(--font-size-regular);
+}
+
+#contact input,#contact textarea , #contact button {
+    width: 100%;
+}
+
+#footer {
+    text-align: center;
+    padding: 16px;
+    font-size:medium;
+}
+
+
+#technology {
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:var(--spacing-regular);
+    justify-items:center;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid hsl(0, 0%, 100%);
+    padding: var(--spacing-regular);
+    box-shadow: 3px 3px 6px 5px var(--shadow-color) ;
+    width: 100%;
+    border-radius: var(--spacing-regular);
+    transition: transform 0.4s ease-in, box-shadow 0.4s ease-in-out;
+}
+
+.card:hover{
+    box-shadow: 3px 3px 8px 9px var(--shadow-color-dark) ;
+    transform: translateY(-1 * var(--spacing-small));
+
+}
+
+
+.card ul{
+    list-style: none;
+    padding: 0%;
+}
+.card header h1{
+    margin: 0;
+}
+
+
+.mobile-nav, section.menu {
+    display: none;
+}
+
+section {
+    scroll-margin-top: calc(100px-(var(--spacing-regular))); 
+}
+
+@media (width<=500px) {
+    .default-nav{
+        display: none;
+    }
+    .mobile-nav{
+        display: initial;
+    }
+    #menu-button{
+        display: block;
+        border-radius: 8px;
+        margin-left: auto;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        border-color: var(--text-color);
+       
+    }
+    section.menu {
+        display: initial;
+        height: 0;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        z-index: 2;
+        width: 100%;
+        transition: height .8s ease-in-out;
+        background-color: var(--background-color);
+    }
+
+    section.menu ul{
+        list-style: none;
+    }
+    section.menu>nav>ul>li{
+       margin-bottom: 16px;
+    }
+
+    section.menu>nav>ul>li>a{
+       text-decoration: none;
+     }
+ 
+    section.menu nav ul>li>a:hover{
+        color: royalblue;
+        text-decoration: underline;
+    }
+
+    section.menu nav{
+        margin-top: 48px;
+    }
+    section.menu nav>a{
+        font-size: var(--font-size-xl);
+    }
+
+   #close-menu{
+        position: absolute;
+        right:16px;
+        top: 16px;
+        background-color: transparent;
+        font-size: x-large;
+        border: none;
+        border-radius: 6px;
+        color: var(--text-color);
+    }
+   
+}
+
+
+@media (prefers-color-scheme:light) {
+    body {
+        --background-color: hsl(240deg, 80%, 5%);
+        --text-color: hsl(240deg, 95%, 100%);
+        --intro-color: hsl(0deg, 0%, 18%);
+        box-shadow: 3px 3px 6px 5px var(--secondary-color) ;
+    }
+}
